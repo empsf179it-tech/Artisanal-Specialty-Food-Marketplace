@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paw & Harvest | Pet Food & Nutrition Journal</title>
+  <meta name="description" content="Practical articles, ingredient stories, and everyday pet food education.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+</head>
+<body>
+  <!-- GLOBAL NAVBAR -->
+  <header class="navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="nav-brand">
+        <svg class="nav-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <path d="M50 85 C20 85 20 50 20 50 C20 20 50 40 50 40 C50 40 80 20 80 50 C80 50 80 85 50 85 Z" />
+              <ellipse cx="25" cy="30" rx="12" ry="16" transform="rotate(-30 25 30)" />
+              <ellipse cx="40" cy="15" rx="12" ry="18" transform="rotate(-10 40 15)" />
+              <ellipse cx="60" cy="15" rx="12" ry="18" transform="rotate(10 60 15)" />
+              <ellipse cx="75" cy="30" rx="12" ry="16" transform="rotate(30 75 30)" />
+            </svg>
+        <div class="nav-brand-text"><span class="nav-brand-name">PAW & HARVEST</span><span class="nav-brand-desc">Artisanal Pet Nutrition</span></div>
+      </a>
+      <nav class="nav-links"><a href="index.html" class="nav-link">Home</a><a href="about.html" class="nav-link">About</a><a href="services.html" class="nav-link">Services</a><a href="journal.html" class="nav-link active">Nutrition Journal</a><a href="contact.html" class="nav-link">Contact</a></nav>
+      <div class="nav-actions">
+        <div class="nav-actions-desktop" style="display: flex; align-items: center;">
+          <button class="btn btn-primary cta-trigger" style="padding: 12px 24px; margin-left: 16px; font-size: 0.95rem;">ASK ABOUT NUTRITION <span class="arrow">→</span></button>
+        </div>
+        <button class="hamburger" aria-label="Open Menu" onclick="document.querySelector('.mobile-nav-drawer').classList.add('open'); document.querySelector('.mobile-nav-overlay').classList.add('open'); document.body.style.overflow='hidden';"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-nav-overlay" onclick="document.querySelector('.mobile-nav-drawer').classList.remove('open'); document.querySelector('.mobile-nav-overlay').classList.remove('open'); document.body.style.overflow='';"></div>
+  <div class="mobile-nav-drawer">
+    <div class="mobile-nav-header">
+      <div class="nav-brand">
+        <svg class="nav-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <path d="M50 85 C20 85 20 50 20 50 C20 20 50 40 50 40 C50 40 80 20 80 50 C80 50 80 85 50 85 Z" />
+              <ellipse cx="25" cy="30" rx="12" ry="16" transform="rotate(-30 25 30)" />
+              <ellipse cx="40" cy="15" rx="12" ry="18" transform="rotate(-10 40 15)" />
+              <ellipse cx="60" cy="15" rx="12" ry="18" transform="rotate(10 60 15)" />
+              <ellipse cx="75" cy="30" rx="12" ry="16" transform="rotate(30 75 30)" />
+            </svg>
+        <div class="nav-brand-text">
+          <span class="nav-brand-name">PAW & HARVEST</span>
+          <span class="nav-brand-desc">Artisanal Pet Nutrition</span>
+        </div>
+      </div>
+      <button class="mobile-nav-close" aria-label="Close Menu">&times;</button>
+    </div>
+    <nav class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="about.html" class="mobile-nav-link">About</a>
+      <a href="services.html" class="mobile-nav-link">Services</a>
+      <a href="journal.html" class="mobile-nav-link active">Nutrition Journal</a>
+      <a href="contact.html" class="mobile-nav-link">Contact</a>
+    </nav>
+    <div style="margin-top: auto;">
+      <button class="btn btn-primary cta-trigger" style="width: 100%; margin-bottom: var(--space-md);">ASK ABOUT NUTRITION <span class="arrow">→</span></button>
+    </div>
+  </div>
+
+  <!-- SEARCH PANEL -->
+  <div class="modal-overlay search-panel" style="align-items: flex-start; padding-top: 100px;">
+    <div class="modal-content" style="background: var(--c-forest); color: var(--c-oat);">
+      <button class="modal-close search-close" style="color: var(--c-oat);">×</button>
+      <h3 style="color: var(--c-oat);">Search Paw & Harvest</h3>
+      <div class="form-group"><input type="text" class="form-control search-input" placeholder="Search pet food, treats, ingredients, journal..." style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: var(--c-oat); font-size: 1.25rem;"></div>
+      <div class="search-results" style="margin-top: var(--space-md); display: flex; flex-direction: column; gap: var(--space-sm);"></div>
+    </div>
+  </div>
+
+  <main>
+    <!-- JOURNAL SEC 01: HERO TEXT -->
+    <section class="reveal" style="background: var(--c-terracotta); padding: var(--space-3xl) 0 var(--space-xl);">
+      <div class="container text-center" style="max-width: 900px; color: var(--c-white);">
+        <span class="text-eyebrow" style="color: var(--c-oat);">Insights & Education</span>
+        <h1 style="margin-bottom: var(--space-md);">THE NUTRITION JOURNAL.</h1>
+        <p class="text-large" style="opacity: 0.9;">Practical articles, ingredient stories and everyday pet food education.</p>
+      </div>
+    </section>
+
+    <!-- JOURNAL SEC 01.5: FEATURED IMAGE CARD -->
+    <section class="reveal" style="padding-bottom: var(--space-3xl);">
+      <div class="container">
+        <div style="position: relative; width: 100%; height: 60vh; min-height: 500px; border-radius: 24px; overflow: hidden; box-shadow: 0 24px 50px rgba(0,0,0,0.15);">
+          <img src="assets/images/THE ROLE OF FRESH PROTEINS.png" alt="The Role of Fresh Proteins" style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.02);">
+          
+          <!-- Gradient overlay to ensure text is readable -->
+          <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(38,53,44,0.95) 0%, rgba(38,53,44,0.4) 50%, rgba(38,53,44,0.1) 100%); display: flex; flex-direction: column; justify-content: flex-end; align-items: center; text-align: center; padding: var(--space-2xl) var(--space-md);">
+            <div style="max-width: 750px; display: flex; flex-direction: column; align-items: center;">
+              <span class="text-eyebrow" style="color: var(--c-forest); background: var(--c-oat); padding: 6px 16px; border-radius: 50px; font-weight: 700; display: inline-block; margin-bottom: var(--space-md);">Featured Ingredient Story</span>
+              <h2 style="color: var(--c-white); font-size: clamp(2rem, 4vw, 3.25rem); margin-bottom: var(--space-sm); line-height: 1.1;">THE ROLE OF FRESH PROTEINS</h2>
+              <p style="color: rgba(255,255,255,0.95); font-size: 1.2rem; font-weight: 600; margin-bottom: var(--space-lg); line-height: 1.6; max-width: 600px; text-align: center;">Discover why sourcing high-quality, recognizable proteins is the most critical step in crafting a nutritional plan for your companion.</p>
+              <button class="btn btn-primary cta-trigger" style="background: var(--c-terracotta); border: none; color: var(--c-white); padding: 14px 32px; font-weight: 700;">READ FULL STORY <span class="arrow">→</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOURNAL SEC 02: MAGAZINE EXPLORER -->
+    <section class="reveal">
+      <div class="container">
+        <!-- Categories Filter -->
+        <div class="nutrition-selector mb-xl" id="journal-filters" style="display: flex; justify-content: center; flex-wrap: wrap; gap: var(--space-sm);">
+          <button class="selector-btn active" data-filter="all">All Topics</button>
+          <button class="selector-btn" data-filter="ingredients">Ingredients</button>
+          <button class="selector-btn" data-filter="feeding">Feeding</button>
+          <button class="selector-btn" data-filter="wellness">Pet Wellness</button>
+          <button class="selector-btn" data-filter="formats">Food Formats</button>
+          <button class="selector-btn" data-filter="puppy">Puppy & Kitten</button>
+        </div>
+
+        <div class="journal-featured-wrapper">
+          <!-- Featured Article -->
+          <div class="card journal-featured-card" style="border: none; background: rgba(255,255,255,0.03); display: flex; flex-direction: column; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 1px solid rgba(255,255,255,0.05); margin-bottom: var(--space-2xl);">
+            <div class="journal-featured-img" style="flex: 1;">
+              <img src="assets/images/Understanding Pet Food Ingredients.png" alt="Understanding Pet Food Ingredients" style="width: 100%; height: 100%; object-fit: cover; min-height: 300px;">
+            </div>
+            <div class="journal-featured-content" style="flex: 1; padding: var(--space-2xl); display: flex; flex-direction: column; justify-content: center;">
+              <span class="text-eyebrow" style="color: var(--c-terracotta);">Ingredients • 5 Min Read</span>
+              <h2 style="margin-bottom: var(--space-md); font-size: clamp(2rem, 3vw, 2.75rem);">Understanding Pet Food Ingredients</h2>
+              <p class="text-large" style="opacity: 0.85; margin-bottom: var(--space-xl); line-height: 1.7;">A comprehensive guide to interpreting what goes into the bowl, focusing on recognizable proteins, functional superfoods, and natural preservatives.</p>
+              <a href="#" class="btn btn-secondary cta-trigger" style="border:none; padding-left:0; color: var(--c-terracotta); font-weight: 600;">READ ARTICLE <span class="arrow">→</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dynamic Article Grid -->
+        <div id="journal-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--space-lg);">
+          
+          <!-- INGREDIENTS (4) -->
+          <div class="card journal-item" data-category="ingredients" style="border: 1px solid var(--c-border); background: var(--c-bg-surface); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 5px 15px rgba(0,0,0,0.02);">
+            <img src="assets/images/Recognizing High-Quality Proteins.png" alt="Article" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
+            <div style="padding: var(--space-lg); display: flex; flex-direction: column; flex: 1; align-items: center; text-align: center;">
+              <span class="text-eyebrow" style="color: var(--c-terracotta);">Ingredients</span>
+              <h3 style="margin-bottom: var(--space-sm); color: var(--c-text-primary); font-size: 1.25rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Recognizing High-Quality Proteins</h3>
+              <p style="opacity: 0.8; margin-bottom: var(--space-md); flex: 1; color: var(--c-text-primary);">Learn how to identify premium meat sources and why they matter for your companion's energy levels.</p>
+              <a href="#" class="cta-trigger" style="color: var(--c-terracotta); text-decoration: none; font-weight: 600; font-size: 0.95rem;">Read More →</a>
+            </div>
+          </div>
+          <div class="card journal-item" data-category="ingredients" style="border: 1px solid var(--c-border); background: var(--c-bg-surface); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 5px 15px rgba(0,0,0,0.02);">
+            <img src="assets/images/The Truth About Meat By-Products.png" alt="Article" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
+            <div style="padding: var(--space-lg); display: flex; flex-direction: column; flex: 1; align-items: center; text-align: center;">
+              <span class="text-eyebrow" style="color: var(--c-terracotta);">Ingredients</span>
+              <h3 style="margin-bottom: var(--space-sm); color: var(--c-text-primary); font-size: 1.25rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">The Truth About Meat By-Products</h3>
+              <p style="opacity: 0.8; margin-bottom: var(--space-md); flex: 1; color: var(--c-text-primary);">Demystifying what by-products actually are and whether they have a place in a healthy diet.</p>
+              <a href="#" class="cta-trigger" style="color: var(--c-terracotta); text-decoration: none; font-weight: 600; font-size: 0.95rem;">Read More →</a>
+            </div>
+          </div>
+          <div class="card journal-item" data-category="ingredients" style="border: 1px solid var(--c-border); background: var(--c-bg-surface); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 5px 15px rgba(0,0,0,0.02);">
+            <img src="assets/images/Superfoods for Dogs and Cats.png" alt="Article" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
+            <div style="padding: var(--space-lg); display: flex; flex-direction: column; flex: 1; align-items: center; text-align: center;">
+              <span class="text-eyebrow" style="color: var(--c-terracotta);">Ingredients</span>
+              <h3 style="margin-bottom: var(--space-sm); color: var(--c-text-primary); font-size: 1.25rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Superfoods for Dogs and Cats</h3>
+              <p style="opacity: 0.8; margin-bottom: var(--space-md); flex: 1; color: var(--c-text-primary);">From blueberries to sweet potatoes, discover which superfoods offer the most benefits.</p>
+              <a href="#" class="cta-trigger" style="color: var(--c-terracotta); text-decoration: none; font-weight: 600; font-size: 0.95rem;">Read More →</a>
+            </div>
+          </div>
+          <div class="card journal-item" data-category="ingredients" style="border: 1px solid var(--c-border); background: var(--c-bg-surface); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 5px 15px rgba(0,0,0,0.02);">
+            <img src="assets/images/Grain-Free vs Grain-Inclusive.png" alt="Article" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
+            <div style="padding: var(--space-lg); display: flex; flex-direction: column; flex: 1; align-items: center; text-align: center;">
+              <span class="text-eyebrow" style="color: var(--c-terracotta);">Ingredients</span>
+              <h3 style="margin-bottom: var(--space-sm); color: var(--c-text-primary); font-size: 1.25rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Grain-Free vs Grain-Inclusive</h3>
+              <p style="opacity: 0.8; margin-bottom: var(--space-md); flex: 1; color: var(--c-text-primary);">A deep dive into the carbohydrate debate and how to choose the right balance.</p>
+              <a href="#" class="cta-trigger" style="color: var(--c-terracotta); text-decoration: none; font-weight: 600; font-size: 0.95rem;">Read More →</a>
+            </div>
+          </div>
+
+          <!-- FEEDING (4) -->
+          <div class="card journal-item" data-category="feeding" style="border: 1px solid var(--c-border); background: var(--c-bg-surface); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 5px 15px rgba(0,0,0,0.02);">
+            <img src="assets/images/Portion Control Guidelines.png" alt="Article" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
+            <div style="padding: var(--space-lg); display: flex; flex-direction: column; flex: 1; align-items: center; text-align: center;">
+              <span class="text-eyebrow" style="color: var(--c-terracotta);">Feeding</span>
+              <h3 style="margin-bottom: var(--space-sm); color: var(--c-text-primary); font-size: 1.25rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Portion Control Guidelines</h3>
+              <p style="opacity: 0.8; margin-bottom: var(--space-md); flex: 1; color: var(--c-text-primary);">How to calculate the exact amount of food your pet needs based on activity level.</p>
+              <a href="#" class="cta-trigger" style="color: var(--c-terracotta); text-decoration: none; font-weight: 600; font-size: 0.95rem;">Read More →</a>
+            </div>
+          </div>
+          <div class="card journal-item" data-category="feeding" style="border: 1px solid var(--c-border); background: var(--c-bg-surface); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 5px 15px rgba(0,0,0,0.02);">
+            <img src="assets/images/Establishing a Feeding Routine.png" alt="Article" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
+            <div style="padding: var(--space-lg); display: flex; flex-direction: column; flex: 1; align-items: center; text-align: center;">
+              <span class="text-eyebrow" style="color: var(--c-terracotta);">Feeding</span>
+              <h3 style="margin-bottom: var(--space-sm); color: var(--c-text-primary); font-size: 1.25rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Establishing a Feeding Routine</h3>
+              <p style="opacity: 0.8; margin-bottom: var(--space-md); flex: 1; color: var(--c-text-primary);">Why timing matters for your companion's digestion and behavioral health.</p>
+              <a href="#" class="cta-trigger" style="color: var(--c-terracotta); text-decoration: none; font-weight: 600; font-size: 0.95rem;">Read More →</a>
+            </div>
+          </div>
+          <div class="card journal-item" data-category="feeding" style="border: 1px solid var(--c-border); background: var(--c-bg-surface); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 5px 15px rgba(0,0,0,0.02);">
+            <img src="assets/images/Transitioning to a New Diet.png" alt="Article" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
+            <div style="padding: var(--space-lg); display: flex; flex-direction: column; flex: 1; align-items: center; text-align: center;">
+              <span class="text-eyebrow" style="color: var(--c-terracotta);">Feeding</span>
+              <h3 style="margin-bottom: var(--space-sm); color: var(--c-text-primary); font-size: 1.25rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Transitioning to a New Diet</h3>
+              <p style="opacity: 0.8; margin-bottom: var(--space-md); flex: 1; color: var(--c-text-primary);">A safe, step-by-step approach to changing your pet's food without stomach upset.</p>
+              <a href="#" class="cta-trigger" style="color: var(--c-terracotta); text-decoration: none; font-weight: 600; font-size: 0.95rem;">Read More →</a>
+            </div>
+          </div>
+          <div class="card journal-item" data-category="feeding" style="border: 1px solid var(--c-border); background: var(--c-bg-surface); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 5px 15px rgba(0,0,0,0.02);">
+            <img src="assets/images/How Often Should You Feed.png" alt="Article" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
+            <div style="padding: var(--space-lg); display: flex; flex-direction: column; flex: 1; align-items: center; text-align: center;">
+              <span class="text-eyebrow" style="color: var(--c-terracotta);">Feeding</span>
+              <h3 style="margin-bottom: var(--space-sm); color: var(--c-text-primary); font-size: 1.25rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">How Often Should You Feed?</h3>
+              <p style="opacity: 0.8; margin-bottom: var(--space-md); flex: 1; color: var(--c-text-primary);">Exploring the benefits of scheduled meals vs free-feeding.</p>
+              <a href="#" class="cta-trigger" style="color: var(--c-terracotta); text-decoration: none; font-weight: 600; font-size: 0.95rem;">Read More →</a>
+            </div>
+          </div>
+
+          <!-- WELLNESS (4) -->
+          <div class="card journal-item" data-category="wellness" style="border: 1px solid var(--c-border); background: var(--c-bg-surface); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 5px 15px rgba(0,0,0,0.02);">
+            <img src="assets/images/Gut Health and Digestion.png" alt="Article" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
+            <div style="padding: var(--space-lg); display: flex; flex-direction: column; flex: 1; align-items: center; text-align: center;">
+              <span class="text-eyebrow" style="color: var(--c-terracotta);">Pet Wellness</span>
+              <h3 style="margin-bottom: var(--space-sm); color: var(--c-text-primary); font-size: 1.25rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Gut Health and Digestion</h3>
+              <p style="opacity: 0.8; margin-bottom: var(--space-md); flex: 1; color: var(--c-text-primary);">The importance of probiotics and fiber in maintaining a robust digestive system.</p>
+              <a href="#" class="cta-trigger" style="color: var(--c-terracotta); text-decoration: none; font-weight: 600; font-size: 0.95rem;">Read More →</a>
+            </div>
+          </div>
+          <div class="card journal-item" data-category="wellness" style="border: 1px solid var(--c-border); background: var(--c-bg-surface); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 5px 15px rgba(0,0,0,0.02);">
+            <img src="assets/images/Joint Support for Senior Pets.png" alt="Article" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
+            <div style="padding: var(--space-lg); display: flex; flex-direction: column; flex: 1; align-items: center; text-align: center;">
+              <span class="text-eyebrow" style="color: var(--c-terracotta);">Pet Wellness</span>
+              <h3 style="margin-bottom: var(--space-sm); color: var(--c-text-primary); font-size: 1.25rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Joint Support for Senior Pets</h3>
+              <p style="opacity: 0.8; margin-bottom: var(--space-md); flex: 1; color: var(--c-text-primary);">Nutritional interventions like Glucosamine to keep older companions moving.</p>
+              <a href="#" class="cta-trigger" style="color: var(--c-terracotta); text-decoration: none; font-weight: 600; font-size: 0.95rem;">Read More →</a>
+            </div>
+          </div>
+          <div class="card journal-item" data-category="wellness" style="border: 1px solid var(--c-border); background: var(--c-bg-surface); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 5px 15px rgba(0,0,0,0.02);">
+            <img src="assets/images/Coat and Skin Nutrition.png" alt="Article" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
+            <div style="padding: var(--space-lg); display: flex; flex-direction: column; flex: 1; align-items: center; text-align: center;">
+              <span class="text-eyebrow" style="color: var(--c-terracotta);">Pet Wellness</span>
+              <h3 style="margin-bottom: var(--space-sm); color: var(--c-text-primary); font-size: 1.25rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Coat and Skin Nutrition</h3>
+              <p style="opacity: 0.8; margin-bottom: var(--space-md); flex: 1; color: var(--c-text-primary);">How Omega-3 and Omega-6 fatty acids contribute to a vibrant, shedding-free coat.</p>
+              <a href="#" class="cta-trigger" style="color: var(--c-terracotta); text-decoration: none; font-weight: 600; font-size: 0.95rem;">Read More →</a>
+            </div>
+          </div>
+          <div class="card journal-item" data-category="wellness" style="border: 1px solid var(--c-border); background: var(--c-bg-surface); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 5px 15px rgba(0,0,0,0.02);">
+            <img src="assets/images/Weight Management Strategies.png" alt="Article" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
+            <div style="padding: var(--space-lg); display: flex; flex-direction: column; flex: 1; align-items: center; text-align: center;">
+              <span class="text-eyebrow" style="color: var(--c-terracotta);">Pet Wellness</span>
+              <h3 style="margin-bottom: var(--space-sm); color: var(--c-text-primary); font-size: 1.25rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Weight Management Strategies</h3>
+              <p style="opacity: 0.8; margin-bottom: var(--space-md); flex: 1; color: var(--c-text-primary);">Effective dietary adjustments for pets that need to shed a few pounds.</p>
+              <a href="#" class="cta-trigger" style="color: var(--c-terracotta); text-decoration: none; font-weight: 600; font-size: 0.95rem;">Read More →</a>
+            </div>
+          </div>
+
+          <!-- FORMATS (4) -->
+          <div class="card journal-item" data-category="formats" style="border: 1px solid var(--c-border); background: var(--c-bg-surface); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 5px 15px rgba(0,0,0,0.02);">
+            <img src="assets/images/Dry Kibble Deep Dive.png" alt="Article" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
+            <div style="padding: var(--space-lg); display: flex; flex-direction: column; flex: 1; align-items: center; text-align: center;">
+              <span class="text-eyebrow" style="color: var(--c-terracotta);">Food Formats</span>
+              <h3 style="margin-bottom: var(--space-sm); color: var(--c-text-primary); font-size: 1.25rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Dry Kibble Deep Dive</h3>
+              <p style="opacity: 0.8; margin-bottom: var(--space-md); flex: 1; color: var(--c-text-primary);">Understanding the extrusion process and how high-quality kibble is made.</p>
+              <a href="#" class="cta-trigger" style="color: var(--c-terracotta); text-decoration: none; font-weight: 600; font-size: 0.95rem;">Read More →</a>
+            </div>
+          </div>
+          <div class="card journal-item" data-category="formats" style="border: 1px solid var(--c-border); background: var(--c-bg-surface); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 5px 15px rgba(0,0,0,0.02);">
+            <img src="assets/images/Freeze-Dried Raw Benefits.png" alt="Article" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
+            <div style="padding: var(--space-lg); display: flex; flex-direction: column; flex: 1; align-items: center; text-align: center;">
+              <span class="text-eyebrow" style="color: var(--c-terracotta);">Food Formats</span>
+              <h3 style="margin-bottom: var(--space-sm); color: var(--c-text-primary); font-size: 1.25rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Freeze-Dried Raw Benefits</h3>
+              <p style="opacity: 0.8; margin-bottom: var(--space-md); flex: 1; color: var(--c-text-primary);">The nutritional advantages of raw diets combined with the convenience of dry food.</p>
+              <a href="#" class="cta-trigger" style="color: var(--c-terracotta); text-decoration: none; font-weight: 600; font-size: 0.95rem;">Read More →</a>
+            </div>
+          </div>
+          <div class="card journal-item" data-category="formats" style="border: 1px solid var(--c-border); background: var(--c-bg-surface); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 5px 15px rgba(0,0,0,0.02);">
+            <img src="assets/images/Wet Food Hydration.png" alt="Article" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
+            <div style="padding: var(--space-lg); display: flex; flex-direction: column; flex: 1; align-items: center; text-align: center;">
+              <span class="text-eyebrow" style="color: var(--c-terracotta);">Food Formats</span>
+              <h3 style="margin-bottom: var(--space-sm); color: var(--c-text-primary); font-size: 1.25rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Wet Food Hydration</h3>
+              <p style="opacity: 0.8; margin-bottom: var(--space-md); flex: 1; color: var(--c-text-primary);">Why adding moisture to the bowl is especially crucial for feline health.</p>
+              <a href="#" class="cta-trigger" style="color: var(--c-terracotta); text-decoration: none; font-weight: 600; font-size: 0.95rem;">Read More →</a>
+            </div>
+          </div>
+          <div class="card journal-item" data-category="formats" style="border: 1px solid var(--c-border); background: var(--c-bg-surface); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 5px 15px rgba(0,0,0,0.02);">
+            <img src="assets/images/Fresh Cooked Meals.png" alt="Article" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
+            <div style="padding: var(--space-lg); display: flex; flex-direction: column; flex: 1; align-items: center; text-align: center;">
+              <span class="text-eyebrow" style="color: var(--c-terracotta);">Food Formats</span>
+              <h3 style="margin-bottom: var(--space-sm); color: var(--c-text-primary); font-size: 1.25rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Fresh Cooked Meals</h3>
+              <p style="opacity: 0.8; margin-bottom: var(--space-md); flex: 1; color: var(--c-text-primary);">Exploring the rise of human-grade, lightly cooked diets for dogs.</p>
+              <a href="#" class="cta-trigger" style="color: var(--c-terracotta); text-decoration: none; font-weight: 600; font-size: 0.95rem;">Read More →</a>
+            </div>
+          </div>
+
+          <!-- PUPPY (4) -->
+          <div class="card journal-item" data-category="puppy" style="border: 1px solid var(--c-border); background: var(--c-bg-surface); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 5px 15px rgba(0,0,0,0.02);">
+            <img src="assets/images/Best Foods for Puppies.png" alt="Article" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
+            <div style="padding: var(--space-lg); display: flex; flex-direction: column; flex: 1; align-items: center; text-align: center;">
+              <span class="text-eyebrow" style="color: var(--c-terracotta);">Puppy & Kitten</span>
+              <h3 style="margin-bottom: var(--space-sm); color: var(--c-text-primary); font-size: 1.25rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Best Foods for Puppies</h3>
+              <p style="opacity: 0.8; margin-bottom: var(--space-md); flex: 1; color: var(--c-text-primary);">Fueling rapid growth phases with the right balance of proteins and fats.</p>
+              <a href="#" class="cta-trigger" style="color: var(--c-terracotta); text-decoration: none; font-weight: 600; font-size: 0.95rem;">Read More →</a>
+            </div>
+          </div>
+          <div class="card journal-item" data-category="puppy" style="border: 1px solid var(--c-border); background: var(--c-bg-surface); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 5px 15px rgba(0,0,0,0.02);">
+            <img src="assets/images/Kitten Nutrition Essentials.png" alt="Article" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
+            <div style="padding: var(--space-lg); display: flex; flex-direction: column; flex: 1; align-items: center; text-align: center;">
+              <span class="text-eyebrow" style="color: var(--c-terracotta);">Puppy & Kitten</span>
+              <h3 style="margin-bottom: var(--space-sm); color: var(--c-text-primary); font-size: 1.25rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Kitten Nutrition Essentials</h3>
+              <p style="opacity: 0.8; margin-bottom: var(--space-md); flex: 1; color: var(--c-text-primary);">Understanding the unique taurine and caloric needs of growing cats.</p>
+              <a href="#" class="cta-trigger" style="color: var(--c-terracotta); text-decoration: none; font-weight: 600; font-size: 0.95rem;">Read More →</a>
+            </div>
+          </div>
+          <div class="card journal-item" data-category="puppy" style="border: 1px solid var(--c-border); background: var(--c-bg-surface); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 5px 15px rgba(0,0,0,0.02);">
+            <img src="assets/images/When to Switch to Adult Food.png" alt="Article" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
+            <div style="padding: var(--space-lg); display: flex; flex-direction: column; flex: 1; align-items: center; text-align: center;">
+              <span class="text-eyebrow" style="color: var(--c-terracotta);">Puppy & Kitten</span>
+              <h3 style="margin-bottom: var(--space-sm); color: var(--c-text-primary); font-size: 1.25rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">When to Switch to Adult Food</h3>
+              <p style="opacity: 0.8; margin-bottom: var(--space-md); flex: 1; color: var(--c-text-primary);">Signs that your young companion is ready for the next stage of nutrition.</p>
+              <a href="#" class="cta-trigger" style="color: var(--c-terracotta); text-decoration: none; font-weight: 600; font-size: 0.95rem;">Read More →</a>
+            </div>
+          </div>
+          <div class="card journal-item" data-category="puppy" style="border: 1px solid var(--c-border); background: var(--c-bg-surface); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 5px 15px rgba(0,0,0,0.02);">
+            <img src="assets/images/Calcium & Bone Growth.png" alt="Article" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
+            <div style="padding: var(--space-lg); display: flex; flex-direction: column; flex: 1; align-items: center; text-align: center;">
+              <span class="text-eyebrow" style="color: var(--c-terracotta);">Puppy & Kitten</span>
+              <h3 style="margin-bottom: var(--space-sm); color: var(--c-text-primary); font-size: 1.25rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Calcium & Bone Growth</h3>
+              <p style="opacity: 0.8; margin-bottom: var(--space-md); flex: 1; color: var(--c-text-primary);">Managing mineral intake to ensure proper skeletal development in large breeds.</p>
+              <a href="#" class="cta-trigger" style="color: var(--c-terracotta); text-decoration: none; font-weight: 600; font-size: 0.95rem;">Read More →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      
+      <style>
+        @media (min-width: 992px) {
+          .journal-featured-card {
+            flex-direction: row !important;
+          }
+          .journal-featured-img {
+            width: 55%;
+          }
+          .journal-featured-content {
+            width: 45%;
+            padding: var(--space-3xl) !important;
+          }
+        }
+      </style>
+      
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const filters = document.querySelectorAll('#journal-filters .selector-btn');
+          const items = document.querySelectorAll('.journal-item');
+          const featured = document.querySelector('.journal-featured-wrapper');
+
+          filters.forEach(btn => {
+            btn.addEventListener('click', () => {
+              // Update active state
+              filters.forEach(b => b.classList.remove('active'));
+              btn.classList.add('active');
+
+              const filter = btn.getAttribute('data-filter');
+
+              // Toggle featured article
+              if (featured) {
+                featured.style.display = (filter === 'all') ? 'block' : 'none';
+              }
+
+              // Filter grid items
+              items.forEach(item => {
+                if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                  item.style.display = 'flex';
+                } else {
+                  item.style.display = 'none';
+                }
+              });
+            });
+          });
+        });
+      </script>
+    </section>
+
+    <!-- JOURNAL SEC 03: NEWSLETTER -->
+    <section class="reveal" style="background-color: var(--c-bg-surface); border-top: 1px solid var(--c-border);">
+      <div class="container text-center">
+        <span class="text-eyebrow">Join the Journal</span>
+        <h2 style="max-width: 800px; margin: 0 auto var(--space-md);">MAKE BETTER PET FOOD CHOICES, ONE ARTICLE AT A TIME.</h2>
+        <p class="text-large" style="max-width: 600px; margin: 0 auto var(--space-lg); opacity: 0.9;">Sign up to receive practical ingredient stories and everyday pet food education directly to your inbox.</p>
+        
+        <form id="newsletterForm" style="display: flex; gap: var(--space-sm); max-width: 500px; margin: 0 auto; flex-direction: column;" onsubmit="event.preventDefault(); this.style.display='none'; document.getElementById('newsletterSuccess').style.display='block';">
+          <input type="email" class="form-control" placeholder="Enter your email address" required style="background: var(--c-white);">
+          <button type="submit" class="btn btn-primary">JOIN THE JOURNAL <span class="arrow">→</span></button>
+        </form>
+        
+        <div id="newsletterSuccess" style="display: none; padding: var(--space-md); background: rgba(201, 111, 74, 0.1); border-radius: var(--radius-sm); color: var(--c-terracotta); max-width: 500px; margin: 0 auto;">
+          <strong>Thank you!</strong> You've successfully joined the journal.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- GLOBAL CTA POPUP -->
+  <div class="modal-overlay" id="enquiryModal">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close modal">×</button>
+      <h2 style="margin-bottom: var(--space-sm);">LET'S TALK PET NUTRITION</h2>
+      <p style="opacity: 0.8; margin-bottom: var(--space-lg);">Tell us about your pet and we'll help you explore thoughtfully selected food and nutrition options.</p>
+      <form id="enquiryForm" novalidate>
+        <div class="form-group"><label class="form-label">Full Name *</label><input type="text" class="form-control" required placeholder="Jane Doe"><span class="form-error">Required.</span></div>
+        <div class="form-group"><label class="form-label">Email Address *</label><input type="email" class="form-control" required placeholder="jane@example.com"><span class="form-error">Required.</span></div>
+        <div class="form-group"><label class="form-label">Phone (Optional)</label><input type="tel" class="form-control" placeholder="+1 (555) 000-0000"></div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md);">
+          <div class="form-group"><label class="form-label">Pet Type *</label><select class="form-control" required><option value="">Select Pet</option><option value="Dog">Dog</option><option value="Cat">Cat</option><option value="Puppy">Puppy</option><option value="Kitten">Kitten</option><option value="Other">Other</option></select><span class="form-error">Required.</span></div>
+          <div class="form-group"><label class="form-label">Pet Age</label><select class="form-control"><option value="">Select Age</option><option value="Puppy/Kitten">Puppy / Kitten</option><option value="Young Adult">Young Adult</option><option value="Adult">Adult</option><option value="Senior">Senior</option></select></div>
+        </div>
+        <div class="form-group"><label class="form-label">Food Interest *</label><select class="form-control" required><option value="">Select Interest</option><option value="Premium Food">Premium Food</option><option value="Natural Treats">Natural Treats</option><option value="Functional Nutrition">Functional Nutrition</option><option value="Freeze-Dried">Freeze-Dried</option><option value="Organic Ingredients">Organic Ingredients</option><option value="General Enquiry">General Enquiry</option></select><span class="form-error">Required.</span></div>
+        <div class="form-group"><label class="form-label">Message *</label><textarea class="form-control" rows="4" required placeholder="How can we help?"></textarea><span class="form-error">Required.</span></div>
+        <div style="display: flex; gap: var(--space-sm); flex-direction: column; margin-top: var(--space-lg);">
+          <button type="submit" class="btn btn-primary" style="width: 100%;">SEND ENQUIRY <span class="arrow">→</span></button>
+          <button type="button" class="btn btn-secondary modal-close" style="width: 100%; border: none;">MAYBE LATER</button>
+        </div>
+      </form>
+      <div id="formSuccess" style="display: none; text-align: center; padding: var(--space-xl) 0;">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--c-terracotta)" stroke-width="2" style="margin-bottom: var(--space-md);"><path d="M22 11.08V12a10 10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+        <h3>ENQUIRY RECEIVED</h3>
+        <p>Thanks — your enquiry has been prepared for the Paw & Harvest team.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXPERT QUOTE SECTION -->
+  <section class="expert-quote-section">
+    <div class="container">
+      <div class="expert-quote-container">
+        <div class="expert-quote-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+          </svg>
+        </div>
+        <p class="expert-quote-text">Nutrition is the cornerstone of longevity. By feeding our pets whole, natural foods, we aren't just giving them a meal—we're gifting them more vibrant years by our side.</p>
+        <div class="expert-profile">
+          <div class="expert-avatar">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Dr. Sarah Jenkins">
+          </div>
+          <div class="expert-details">
+            <h4>Dr. Sarah Jenkins, DVM</h4>
+            <span>Lead Canine Nutritionist</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="nav-brand" style="margin-bottom: var(--space-md); display: inline-flex;">
+            <svg class="nav-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <path d="M50 85 C20 85 20 50 20 50 C20 20 50 40 50 40 C50 40 80 20 80 50 C80 50 80 85 50 85 Z" />
+              <ellipse cx="25" cy="30" rx="12" ry="16" transform="rotate(-30 25 30)" />
+              <ellipse cx="40" cy="15" rx="12" ry="18" transform="rotate(-10 40 15)" />
+              <ellipse cx="60" cy="15" rx="12" ry="18" transform="rotate(10 60 15)" />
+              <ellipse cx="75" cy="30" rx="12" ry="16" transform="rotate(30 75 30)" />
+            </svg>
+            <div class="nav-brand-text">
+              <span class="nav-brand-name">PAW & HARVEST</span>
+              <span class="nav-brand-desc">ARTISANAL PET NUTRITION</span>
+            </div>
+          </a>
+          <p style="opacity: 0.8; max-width: 300px; margin-bottom: var(--space-md);">Thoughtfully selected food and nutrition for the pets who are part of the family.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram">
+              <svg class="social-icon" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <svg class="social-icon" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+            </a>
+            <a href="#" aria-label="X">
+              <svg class="social-icon" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+            </a>
+            <a href="#" aria-label="YouTube">
+              <svg class="social-icon" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h4>EXPLORE</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="journal.html">Nutrition Journal</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>DISCOVER</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Dog Food</a></li>
+            <li><a href="services.html">Cat Food</a></li>
+            <li><a href="services.html">Natural Treats</a></li>
+            <li><a href="services.html">Functional Nutrition</a></li>
+            <li><a href="journal.html">Ingredients</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>SUPPORT</h4>
+          <ul class="footer-links">
+            <li><a href="#" class="cta-trigger">Ask About Nutrition</a></li>
+            <li><a href="#" class="cta-trigger">Food Discovery</a></li>
+            <li><a href="journal.html">Nutrition Journal</a></li>
+            <li><a href="contact.html">General Enquiry</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>PET FOOD NOTES, INGREDIENT STORIES & WELLNESS IDEAS</h4>
+          <form style="display: flex; flex-direction: column; gap: var(--space-sm);" onsubmit="event.preventDefault(); alert('Subscribed to the journal!');">
+            <input type="email" placeholder="Your email address" required style="width: 100%; padding: var(--space-md) var(--space-sm); border: 1px solid var(--c-border); font-family: var(--font-body); background: var(--c-white); box-sizing: border-box;">
+            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; box-sizing: border-box;">SUBSCRIBE <span class="arrow">→</span></button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div>
+          <p style="margin:0;">&copy; 2026 Paw & Harvest. All rights reserved. <br><span style="font-size: 0.7rem; opacity: 0.7;">Fictional placeholder information.</span></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
