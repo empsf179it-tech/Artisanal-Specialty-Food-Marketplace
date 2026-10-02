@@ -1249,3 +1249,99 @@ img {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+/* ==========================================================================
+   BACK TO TOP BUTTON
+   ========================================================================== */
+.back-to-top {
+  position: fixed;
+  bottom: var(--space-md);
+  right: var(--space-md);
+  width: 48px;
+  height: 48px;
+  background-color: var(--c-terracotta);
+  color: var(--c-white);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px var(--c-black-trans-20);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all var(--transition-normal);
+  z-index: 99;
+}
+
+.back-to-top svg {
+  width: 24px;
+  height: 24px;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background-color: var(--c-forest);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px var(--c-black-trans-20);
+}
+
+[data-theme="dark"] .back-to-top:hover {
+  background-color: var(--c-oat);
+  color: var(--c-forest);
+}
+
+/* ==========================================================================
+   FOOTER NEWSLETTER
+   ========================================================================== */
+.newsletter-col {
+  text-align: center;
+}
+
+.newsletter-heading {
+  margin-bottom: var(--space-md);
+  font-size: 1rem;
+  text-align: center;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.newsletter-input {
+  width: 100%;
+  padding: 18px 24px;
+  border: 1px solid var(--c-border);
+  font-family: var(--font-body);
+  background: var(--c-white);
+  box-sizing: border-box;
+  font-size: 1.1rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-normal);
+  color: var(--c-forest);
+  text-align: center;
+}
+
+.newsletter-input:focus {
+  outline: none;
+  border-color: var(--c-terracotta);
+  box-shadow: 0 0 0 2px rgba(201, 111, 74, 0.2);
+}
+
+.newsletter-btn {
+  width: 100%;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 18px 24px;
+  font-size: 1.1rem;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.5px;
+}
